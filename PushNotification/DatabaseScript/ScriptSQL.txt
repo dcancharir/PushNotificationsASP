@@ -1,0 +1,18 @@
+--Database Creation
+create database MyPushNotification
+
+use MyPushNotification
+--create table contacts
+create table dbo.Contacts (
+	ContactID int identity not null primary key,
+	ContactName varchar(100) not null,
+	ContactNo varchar(50) not null,
+	AddedOn Datetime not null
+)
+
+--Need to enable Service Broker on the database
+Alter Database MyPushNotification set Enable_Broker
+-- after to finish the c# project insert Contacts to see notifications thought database
+insert into Contacts(
+	ContactName,ContactNo,AddedOn
+)values('asdasdasdsadasd','987360598',GETDATE())
